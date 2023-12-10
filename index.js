@@ -1,6 +1,6 @@
-console.log("#");
-console.log("##");
-console.log("###");
-console.log("#####");
-console.log("######");
+let num = "#";
+for (let i = 0; i < 7; i++) {
+    console.log(num);
+    num += "#";
+}
 
