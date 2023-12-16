@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p style="text-align: center">
+        <!-- <div id="cat"> -->
+        <img src="OIP.jpg" id="cat" style="position: relative;width: 120px;height: 150px;">
+        <img src="cap.jpg" id="cap" style="width: 120px;height: 80px;">
+        <!--  </div> -->
+    </p>
+    <script>
+        let cat = document.querySelector("#cat"); let cap = document.querySelector("#cap");
+        let angle = Math.PI / 2;
+        function animate(time, lastTime) {
+            if (lastTime != null) { angle += (time - lastTime) * 0.001; }
+            cat.style.top = (Math.sin(angle) * 20) + "px"; cat.style.left = (Math.cos(angle) * 200) + "px";
+            requestAnimationFrame(newTime => animate(newTime, time));
+        }
+        /*  function animate1(time, lastTime) {
+             if (lastTime != null) { angle += (time - lastTime) * 0.001; }
+             cap.style.top = (Math.cos(angle) * 20) + "px"; cat.style.left = (Math.sin(angle) * 200) + "px";
+             requestAnimationFrame(newTime => animate(newTime, time));
+         } */
+
+        requestAnimationFrame(animate);
+        //requestAnimationFrame(animate1);
+
+    </script>
+</body>
+
+</html>
